@@ -10,7 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-family-cinzel: var(--font-cinzel);
+  --font-cinzel: var(--font-cinzel);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,5 +23,87 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Cinzel font utility class */
+.font-cinzel {
+  font-family: var(--font-cinzel), 'Cinzel', serif !important;
+}
+
+/* Apply Cinzel to all child elements when body has font-cinzel class */
+.font-cinzel * {
+  font-family: var(--font-cinzel), 'Cinzel', serif !important;
+}
+
+/* Scroll Animation Classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.animate-fade-in.visible {
+  opacity: 1;
+}
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-scale-up {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-scale-up.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.animate-stagger {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-stagger.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay for multiple elements */
+.animate-stagger:nth-child(1) { transition-delay: 0.1s; }
+.animate-stagger:nth-child(2) { transition-delay: 0.2s; }
+.animate-stagger:nth-child(3) { transition-delay: 0.3s; }
+.animate-stagger:nth-child(4) { transition-delay: 0.4s; }
+.animate-stagger:nth-child(5) { transition-delay: 0.5s; }
+.animate-stagger:nth-child(6) { transition-delay: 0.6s; }

@@ -20,7 +20,7 @@ const cinzel = Cinzel({
 
 export const metadata: Metadata = {
   title: "Madow Honey",
-  description: "Madu Berkualitas",
+  description: "Madu Murni Berkualitas",
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} antialiased font-cinzel`}
       >
         {children}
       </body>
